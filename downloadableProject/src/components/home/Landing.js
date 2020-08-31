@@ -34,10 +34,13 @@ const Landing = (props) => {
               " " +
               (lastName == undefined ? "" : lastName)}
           </h1>
-          <Typist className="lead"> {headline}</Typist>
+          <Typist className="lead" cursor={{ show: false }}>
+            {" "}
+            {headline}
+          </Typist>
           <div className="p-5">
             {icons.map((icon) =>
-              icon["handle"] != "" ? (
+              icon["handle"] != null && icon["handle"] != "" ? (
                 <a
                   key={icon.id}
                   target="_blank"

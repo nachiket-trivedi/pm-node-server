@@ -20,7 +20,10 @@ const Navbar = (props) => {
         isTop ? "bg-transparent" : "bg-gradient"
       } `}
     >
-      <a className="navbar-brand" href={process.env.PUBLIC_URL + "/#home"}>
+      <a
+        className="navbar-brand"
+        href={process.env.PUBLIC_URL + "/index.html#home"}
+      >
         Home
       </a>
       <button
@@ -42,7 +45,7 @@ const Navbar = (props) => {
               <li className="nav-item">
                 <a
                   className="nav-link lead"
-                  href={process.env.PUBLIC_URL + "/#aboutme"}
+                  href={process.env.PUBLIC_URL + "/index.html#aboutme"}
                 >
                   Me
                 </a>
@@ -50,7 +53,7 @@ const Navbar = (props) => {
               <li className="nav-item">
                 <a
                   className="nav-link lead"
-                  href={process.env.PUBLIC_URL + "/#experience"}
+                  href={process.env.PUBLIC_URL + "/index.html#experience"}
                 >
                   Experience
                 </a>
@@ -58,7 +61,7 @@ const Navbar = (props) => {
               <li className="nav-item">
                 <a
                   className="nav-link lead"
-                  href={process.env.PUBLIC_URL + "/#projects"}
+                  href={process.env.PUBLIC_URL + "/index.html#projects"}
                 >
                   Projects
                 </a>
@@ -66,7 +69,7 @@ const Navbar = (props) => {
               <li className="nav-item">
                 <a
                   className="nav-link lead"
-                  href={process.env.PUBLIC_URL + "/#education"}
+                  href={process.env.PUBLIC_URL + "/index.html#education"}
                 >
                   Education
                 </a>
@@ -74,7 +77,7 @@ const Navbar = (props) => {
               <li className="nav-item">
                 <a
                   className="nav-link lead"
-                  href={process.env.PUBLIC_URL + "/#skills"}
+                  href={process.env.PUBLIC_URL + "/index.html#skills"}
                 >
                   Skills
                 </a>
