@@ -17,13 +17,32 @@ const Projects = () => {
   gitHubLink = "https://api.github.com/users/";
   gitHubQuerry = "/repos";
   useEffect(() => {
+    //console.log("project", repos, projectDates, projectDesc);
     axios
       .get(gitHubLink + githubId + gitHubQuerry)
       .then((response) => {
+        console.log("proj resp", response.data);
         let gitRepos = [];
         for (let i in response.data) {
           let repoObj = response.data[i];
+          console.log("repoObj name", repoObj["name"]);
           if (repos.includes(repoObj["name"])) gitRepos.push(repoObj);
+        }
+        let onlyNameArr = [];
+        for (let i in gitRepos) {
+          onlyNameArr.push(gitRepos[i]["name"]);
+        }
+        console.log("onlyNameArr", onlyNameArr);
+
+        for (let i in repos) {
+          if (!onlyNameArr.includes(repos[i])) {
+            let dummyobj = {
+              name: repos[i],
+              svn_url: "#",
+              stargazers_count: "0",
+            };
+            gitRepos.push(dummyobj);
+          }
         }
         setProjectsArray(gitRepos);
       })

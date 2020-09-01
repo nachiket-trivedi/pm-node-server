@@ -8,6 +8,7 @@
   border-radius: 15px;
   margin: 18px 0 18px 0;
   background-color: white;
+  word-wrap: break-word;
 }
 .projDesc {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -28,13 +29,14 @@
 }
 .rightHeader {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 .aboutBg {
   background-color: rgb(56, 56, 56);
   color: white;
-  padding: 100px;
+  padding: 120px 100px 120px 100px;
 }
 .projectsPage {
   background-color: rgb(252, 252, 252);
@@ -223,4 +225,58 @@
   outline: none;
   box-shadow: none !important;
   border: 1px solid #ccc !important;
+}
+.modalFooter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.footerBtn {
+  margin-left: 10px;
+}
+.formRow {
+  margin-bottom: 15px;
+}
+.addRemoveBtnGrp {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+.meDiv {
+  display: flex;
+  flex-direction: row;
+}
+.downloadModalBody {
+  padding: 40px 40px 20px 40px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: rgb(73, 73, 73);
+}
+.downloadModalFooter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.downloadModalGitUrl {
+  font-weight: bold;
+  font-family: "Courier New", Courier, monospace;
+}
+.downloadModalNote {
+  font-size: 10px;
+  color: grey;
+}
+.downloadModalFooterBtn {
+  margin: 50px;
+  font-size: 20px;
+}
+.smallsubtitleCreatePage {
+  font-size: 16px;
+  color: rgb(146, 146, 146);
+  padding-left: 10px;
+}
+.projCardFooter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }

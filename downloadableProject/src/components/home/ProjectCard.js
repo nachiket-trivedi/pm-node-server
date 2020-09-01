@@ -9,32 +9,36 @@ const ProjectCard = (props) => {
   const { name, svn_url, stargazers_count } = props.projectData;
 
   useEffect(() => {
-    const date = new Date(props.projectData.pushed_at);
-    const nowdate = new Date();
-    const diff = nowdate.getTime() - date.getTime();
-    const hours = Math.trunc(diff / 1000 / 60 / 60);
-
-    if (hours < 24) {
-      return setUpdatedAt(`${hours.toString()} hours ago`);
+    if (props.projectData.pushed_at == null) {
+      return setUpdatedAt("");
     } else {
-      const monthNames = [
-        "January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July",
-        "August",
-        "September",
-        "October",
-        "November",
-        "December",
-      ];
-      const day = date.getDate();
-      const monthIndex = date.getMonth();
-      const year = date.getFullYear();
-      return setUpdatedAt(`on ${day} ${monthNames[monthIndex]} ${year}`);
+      const date = new Date(props.projectData.pushed_at);
+      const nowdate = new Date();
+      const diff = nowdate.getTime() - date.getTime();
+      const hours = Math.trunc(diff / 1000 / 60 / 60);
+
+      if (hours < 24) {
+        return setUpdatedAt(`${hours.toString()} hours ago`);
+      } else {
+        const monthNames = [
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "September",
+          "October",
+          "November",
+          "December",
+        ];
+        const day = date.getDate();
+        const monthIndex = date.getMonth();
+        const year = date.getFullYear();
+        return setUpdatedAt(`on ${day} ${monthNames[monthIndex]} ${year}`);
+      }
     }
   }, [props.projectData.pushed_at]);
 
@@ -90,7 +94,9 @@ const ProjectCard = (props) => {
                 <i className="fab fa-github" /> Stars{" "}
                 <span className="badge badge-dark">{stargazers_count}</span>
               </span>
-              <small className="text-muted">Updated {updated_at}</small>
+              <small className="text-muted">
+                {updated_at == "" ? "" : "Updated " + updated_at}
+              </small>
             </p>
           </div>
         </div>
